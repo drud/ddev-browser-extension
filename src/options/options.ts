@@ -1,7 +1,7 @@
 import { ConfigProvider } from "../config";
 
-const gitpodUrlInput = document.getElementById("gitpod-url-input")! as HTMLInputElement;
-const gitpodPopupInput = document.getElementById("gitpod-open-as-popup")! as HTMLInputElement;
+const gitpodUrlInput = document.getElementById("ddev-url-input")! as HTMLInputElement;
+const gitpodPopupInput = document.getElementById("ddev-open-as-popup")! as HTMLInputElement;
 const messageElement = document.getElementById("message")! as HTMLDivElement;
 
 

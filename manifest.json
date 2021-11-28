@@ -19,7 +19,7 @@
         "*://*.gitpod.io/*"
       ],
       "js": [
-        "dist/bundles/gitpodify.bundle.js"
+        "dist/bundles/ddevify.bundle.js"
       ]
     }
   ],

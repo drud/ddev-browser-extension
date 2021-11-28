@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
     mode: 'production',
     entry: {
-        gitpodify: './dist/gitpodify.js',
+        ddevify: './dist/ddevify.js',
         options: './dist/options/options.js',
         background: './dist/background.js'
     },

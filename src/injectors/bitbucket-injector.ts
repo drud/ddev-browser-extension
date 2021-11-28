@@ -3,12 +3,12 @@ import { ConfigProvider } from "../config";
 import { renderGitpodUrl, makeOpenInPopup } from "../utils";
 import select = require("select-dom");
 
-namespace Gitpodify {
-	export const NAV_BTN_ID = "gitpod-btn-nav";
-	export const NAV_BTN_CLASS = "gitpod-nav-btn";
+namespace Ddevify {
+	export const NAV_BTN_ID = "ddev-btn-nav";
+	export const NAV_BTN_CLASS = "ddev-nav-btn";
     export const NAV_BTN_CLASS_SELECTOR = "." + NAV_BTN_CLASS;
     
-    export const CSS_REF_BTN_CONTAINER = "gitpod-btn-container";
+    export const CSS_REF_BTN_CONTAINER = "ddev-btn-container";
     export const CSS_REF_NO_CONTAINER = "no-container";
 }
 
@@ -37,7 +37,7 @@ export class BitbucketInjector extends InjectorBase {
     }
 
     checkIsInjected(): boolean {
-        const button = document.getElementById(`${Gitpodify.NAV_BTN_ID}`);
+        const button = document.getElementById(`${Ddevify.NAV_BTN_ID}`);
         const currentUrl = renderGitpodUrl(this.config.gitpodURL);
         return checkIsBtnUpToDate(button, currentUrl);
     }
@@ -75,7 +75,7 @@ abstract class ButtonInjectorBase implements ButtonInjector {
             return;
         }
 
-        const oldBtn = document.getElementById(Gitpodify.NAV_BTN_ID);
+        const oldBtn = document.getElementById(Ddevify.NAV_BTN_ID);
         if (oldBtn) {
             if (!checkIsBtnUpToDate(oldBtn, currentUrl)) {
                 // update button
@@ -94,17 +94,17 @@ abstract class ButtonInjectorBase implements ButtonInjector {
     }
 
     protected renderButton(url: string, openAsPopup: boolean, float: boolean = true): HTMLElement {
-        let classes = Gitpodify.NAV_BTN_CLASS;
+        let classes = Ddevify.NAV_BTN_CLASS;
         if (float) {
             classes = `${classes} ${this.btnClasses} aui-button`;
         }   
 
         const container = document.createElement('div');
-        container.id = Gitpodify.CSS_REF_BTN_CONTAINER;
+        container.id = Ddevify.CSS_REF_BTN_CONTAINER;
         container.className = classes;
 
         const a = document.createElement('a');
-        a.id = Gitpodify.NAV_BTN_ID;
+        a.id = Ddevify.NAV_BTN_ID;
         a.title = "DDEV";
         a.text = "DDEV"
         a.href = url;

@@ -1,6 +1,6 @@
 import * as domloaded from 'dom-loaded';
 
-import "../css/gitpodify.css"
+import "../css/ddevify.css"
 import { ConfigProvider } from './config';
 import { Injector } from './injectors/injector';
 import { InjectorProvider } from './injectors/injector-provider';
@@ -12,7 +12,7 @@ let observer: MutationObserver | undefined;
 
 /**
  * This method is called on _every_ page the extension is statically registered for (cmp. manifest.json/content_scripts/matches)
- * or on the active tab when the user clicked on the Gitpod icon.
+ * or on the active tab when the user clicked on the DDEV icon.
  */
 const init = async (injectedByUserClick: boolean = false) => {
     const configProvider = await ConfigProvider.create();
@@ -61,7 +61,7 @@ const init = async (injectedByUserClick: boolean = false) => {
 
 const injectedByUserClick = (): boolean => {
     // This script has been injected by a user click on the Gitpod icon when the following element exists.
-    const div = document.getElementById("gitpod-extension-icon-clicked");
+    const div = document.getElementById("ddev-extension-icon-clicked");
     if (div) {
         div.remove();
         return true;

@@ -1,11 +1,11 @@
 import { browser } from "webextension-polyfill-ts";
 import { ConfigProvider } from "./config";
 
-async function gitpodifyCurrentTab() {
+async function ddevifyCurrentTab() {
     try {
-        // add a dummy div element to indicate that gitpodify.bundle.js was injected by a user click on the gitpod icon
-        browser.tabs.executeScript({ code: "document.body.innerHTML += '<div style=\"display: none;\" id=\"gitpod-extension-icon-clicked\"></div>'" })
-        browser.tabs.executeScript({ file: "/dist/bundles/gitpodify.bundle.js" });
+        // add a dummy div element to indicate that ddevify.bundle.js was injected by a user click on the gitpod icon
+        browser.tabs.executeScript({ code: "document.body.innerHTML += '<div style=\"display: none;\" id=\"ddev-extension-icon-clicked\"></div>'" })
+        browser.tabs.executeScript({ file: "/dist/bundles/ddevify.bundle.js" });
     } catch {
         try {
             const configProvider = await ConfigProvider.create();
@@ -17,7 +17,7 @@ async function gitpodifyCurrentTab() {
     }
 }
 
-browser.browserAction.onClicked.addListener(gitpodifyCurrentTab)
+browser.browserAction.onClicked.addListener(ddevifyCurrentTab)
 
 browser.runtime.onInstalled.addListener((details) => {
     if (details.reason === "install") {

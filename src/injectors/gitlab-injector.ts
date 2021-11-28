@@ -4,9 +4,9 @@ import { ConfigProvider } from '../config';
 import { ButtonInjector, InjectorBase, checkIsBtnUpToDate } from './injector';
 import { renderGitpodUrl, makeOpenInPopup } from '../utils';
 
-namespace Gitpodify {
-	export const BTN_ID = "gitpod-btn-nav";
-	export const BTN_CLASS = "gitpod-nav-btn";
+namespace Ddevify {
+	export const BTN_ID = "ddev-btn-nav";
+	export const BTN_CLASS = "ddev-nav-btn";
 }
 
 export class GitlabInjector extends InjectorBase {
@@ -29,7 +29,7 @@ export class GitlabInjector extends InjectorBase {
     }
 
     checkIsInjected(): boolean {
-        const button = document.getElementById(`${Gitpodify.BTN_ID}`);
+        const button = document.getElementById(`${Ddevify.BTN_ID}`);
         const currentUrl = renderGitpodUrl(this.config.gitpodURL);
         return checkIsBtnUpToDate(button, currentUrl);
     }
@@ -61,7 +61,7 @@ class RepositoryInjector implements ButtonInjector {
             return;
         }
 
-        const oldBtn = document.getElementById(Gitpodify.BTN_ID);
+        const oldBtn = document.getElementById(Ddevify.BTN_ID);
         if (oldBtn && !checkIsBtnUpToDate(oldBtn, currentUrl)) {
             // Only add once
             (oldBtn as HTMLAnchorElement).href = currentUrl;
@@ -90,9 +90,9 @@ class RepositoryInjector implements ButtonInjector {
         container2ndLevel.className = "git-clone-holder js-git-clone-holder";
 
         const a = document.createElement('a');
-        a.id = Gitpodify.BTN_ID;
-        a.title = "Gitpod";
-        a.text = "Gitpod"
+        a.id = Ddevify.BTN_ID;
+        a.title = "DDEV";
+        a.text = "DDEV"
         a.href = url;
         a.target = "_blank";
         a.className = "gl-button btn btn-info";
