@@ -126,8 +126,8 @@ abstract class ButtonInjectorBase implements ButtonInjector {
 
         const a = document.createElement('a');
         a.id = Gitpodify.NAV_BTN_ID;
-        a.title = "Gitpod";
-        a.text = "Gitpod"
+        a.title = "DDEV";
+        a.text = "DDEV"
         a.href = url;
         a.target = "_blank";
         if (openAsPopup) {

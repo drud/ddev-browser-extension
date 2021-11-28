@@ -1,6 +1,7 @@
 export function renderGitpodUrl(gitpodURL: string): string {
-    const baseURL = `${window.location.protocol}//${window.location.host}`;
-    return `${gitpodURL}/#${baseURL}` + window.location.pathname;
+    const baseURL = encodeURIComponent(`${window.location.protocol}//${window.location.host}/${window.location.pathname}`);
+    const ddevGitpodLauncherURL = 'https://github.com/drud/ddev-gitpod-launcher';
+    return `${gitpodURL}/#DDEV_REPO=${baseURL},/${ddevGitpodLauncherURL}`;
 }
 
 export function makeOpenInPopup(a: HTMLAnchorElement): void {

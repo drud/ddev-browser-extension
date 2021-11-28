@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
-  "name": "Gitpod - Always ready to code",
-  "short_name": "Gitpod",
-  "version": "1.11",
-  "description": "Spin up fresh, automated dev environments for each task, in the cloud, in seconds.",
+  "name": "DDEV Gitpod Launcher",
+  "short_name": "DDEV",
+  "version": "0.1",
+  "description": "Launch a web project in DDEV+Gitpod with one click.",
   "icons": {
-    "16": "icons/gitpod-logo-16.png",
-    "48": "icons/gitpod-logo-48.png",
-    "128": "icons/gitpod-logo.png"
+    "16": "icons/ddev-logo-16.png",
+    "48": "icons/ddev-logo-48.png",
+    "128": "icons/ddev-logo.png"
   },
   "content_scripts": [
     {
@@ -25,11 +25,11 @@
   ],
   "browser_action": {
     "default_icon": {
-      "16": "icons/gitpod-logo-16.png",
-      "48": "icons/gitpod-logo-48.png",
-      "128": "icons/gitpod-logo.png"
+      "16": "icons/ddev-logo-16.png",
+      "48": "icons/ddev-logo-48.png",
+      "128": "icons/ddev-logo.png"
     },
-    "default_title": "Gitpod Online IDE"
+    "default_title": "DDEV Gitpod Launcher"
   },
   "background": {
     "scripts": ["dist/bundles/background.bundle.js"]
