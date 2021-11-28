@@ -11,6 +11,13 @@
   },
   "content_scripts": [
     {
+      "exclude_matches": [
+        "*://*.github.com/*/*/*",
+        "*://*.gitlab.com/*/*/*",
+        "*://*.bitbucket.org/*/*/*",
+        "*://*.gitlab.cn/*/*/*",
+        "*://*.gitpod.io/*/*/*"
+      ],
       "matches": [
         "*://*.github.com/*",
         "*://*.gitlab.com/*",
