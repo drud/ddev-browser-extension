@@ -1,3 +1,5 @@
+# ARCHIVED: This was replaced with a bookmarklet
+
 # DDEV Gitpod Launcher Browser extension
 
 This is the DDEV Gitpod Launcher browser extension, just a minor modification of the Gitpod Browser Extension (Thanks!). It supports Chrome (see [Chrome Web Store](https://chrome.google.com/webstore/detail/dodmmooeoklaejobgleioelladacbeki/)), Firefox (see [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/gitpod/)) and Edge (see [how to install Chrome extensions](https://support.microsoft.com/help/4538971/microsoft-edge-add-or-remove-extensions)), and adds a **DDEV** button to the configured GitLab, GitHub and Bitbucket installations (defaults to `gitlab.com`, `github.com`, `bitbucket.org`, and `gitlab.cn`) which immediately creates a Gitpod workspace for the current Git context:
